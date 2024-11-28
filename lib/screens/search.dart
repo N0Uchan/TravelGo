@@ -29,7 +29,6 @@ class _SearchScreensState extends State<SearchScreen> {
   void _searchPlace() {
     _focusNode.unfocus();
     final queryPlace = _textFieldController.text.trim();
-    print(queryPlace);
     if (queryPlace.isEmpty) {
       return;
     }
