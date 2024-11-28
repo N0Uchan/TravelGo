@@ -7,7 +7,7 @@ import 'dart:convert';
 // import 'package:travel_go/widgets/weather.dart';
 
 // Future<Map<String, dynamic>>
-'AIzaSyCDT_HpaJh6rFPpO1kfsD16t5fWWL1hn6Q'
+
 Future<Map<String, dynamic>> fetchPlaceDetails(String queryPlace) async {
   final model = GenerativeModel(
     model: 'gemini-1.5-flash-8b',
