@@ -164,7 +164,7 @@ class PlaceDetails extends StatelessWidget {
                 const SizedBox(
                   height: 12,
                 ),
-                WeatherLoader(queryPlace: placeName),
+                placeDetails["isFiction"] ? SizedBox.shrink() : WeatherLoader(queryPlace: placeName),
                 const SizedBox(
                   height: 12,
                 ),
