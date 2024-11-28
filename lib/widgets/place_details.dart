@@ -4,7 +4,7 @@ import 'package:travel_go/widgets/food_image_carousel.dart';
 import 'package:travel_go/widgets/gradient_text.dart';
 import 'package:travel_go/widgets/items_to_pack.dart';
 import 'package:travel_go/widgets/place_image_carousel.dart';
-import 'package:string_extensions/string_extensions.dart';
+// import 'package:string_extensions/string_extensions.dart';
 import 'package:travel_go/widgets/weather_loader.dart';
 // import 'package:pexels_api/pexels_api.dart';
 
@@ -34,7 +34,7 @@ class PlaceDetails extends StatelessWidget {
           );
         } else if (snapshot.hasData) {
           final placeDetails = snapshot.data!;
-
+          
           if (placeDetails["valid"] == false) {
             return Padding(
               padding: const EdgeInsets.all(16),
@@ -42,7 +42,7 @@ class PlaceDetails extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: AnimatedGradientText(
-                    text: queryPlace.capitalize,
+                    text: placeDetails["queryPlace"].capitalize,
                     startColor: const Color.fromARGB(255, 84, 210, 227),
                     endColor: const Color.fromARGB(255, 255, 47, 47),
                     duration: const Duration(milliseconds: 600),
@@ -114,7 +114,7 @@ class PlaceDetails extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: AnimatedGradientText(
-                    text: queryPlace.capitalize,
+                    text: placeDetails["queryPlace"].capitalize,
                     startColor: const Color.fromARGB(255, 84, 210, 227),
                     endColor: const Color.fromARGB(255, 255, 47, 47),
                     duration: const Duration(milliseconds: 600),
@@ -165,7 +165,7 @@ class PlaceDetails extends StatelessWidget {
                 const SizedBox(
                   height: 12,
                 ),
-                WeatherLoader(queryPlace: queryPlace),
+                WeatherLoader(queryPlace: placeDetails["queryPlace"]),
                 const SizedBox(
                   height: 12,
                 ),
